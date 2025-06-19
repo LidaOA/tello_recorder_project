@@ -18,9 +18,7 @@ def record_tello_video_stream(frame_read: tello.BackgroundFrameRead,timestamp):
         (W, H)
     )
     try:
-        i=0
         while True:
-            i += 1
             frame = frame_read.frame  # Supposons que c'est une image 2D (grayscale)
             if len(frame.shape) == 2:  # Vérifie si l'image est en niveaux de gris
                 frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)  # Convertit en BGR
